@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// Model of object of currency symbols(not crypto)
 struct Symbols: Codable {
     let success: Bool
     let symbols: [String: Symbol]

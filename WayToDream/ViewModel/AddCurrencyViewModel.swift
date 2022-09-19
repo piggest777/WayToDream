@@ -14,6 +14,7 @@ class AddCurrencyViewModel: ObservableObject {
     @Published var currenciesList: [Currency]  = []
     
     
+    //request available symbols for exchange
     func getSymbols() {
         AF.request(GET_SYMBOLS_URL).responseDecodable(of: Symbols.self) { response in
 

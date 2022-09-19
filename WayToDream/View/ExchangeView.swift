@@ -19,6 +19,7 @@ struct ExchangeView: View {
     var placeholder = "Select Currency"
     @State var value = ""
     @State var textBalance  = 0.0
+    @State var navActive = false
     
     
     
@@ -109,6 +110,8 @@ struct ExchangeView: View {
                                     showAddFundsSheet = true
                                 }
                                 
+
+                                
                             }
                             
                             
@@ -129,22 +132,24 @@ struct ExchangeView: View {
                         
                         ScrollView {
                                 ForEach(searchResults, id: \.baseAsset) { ticker in
+                                
                                     ListRow(userAmount: $textBalance, currency: $currency, exchangeRate: $vm.exchangeRate ,ticker: ticker)
                                 }
                             }
                             .searchable(text: $searchText)
-                            .onAppear {
-                                vm.getTickers(quoteAsset: .USDT)
-                                currency = balance.currentCurrency
-                                
-                                vm.getRate(from: "USD", to: currency)
-                        }
-                    }
-                    
+
+                    }.onAppear {
+                        vm.getTickers(quoteAsset: .USDT)
+                        currency = balance.currentCurrency
+                        
+                        
+                        vm.getRate(from: "USD", to: currency)
+                }
                 }
             }
-        }.sheet(isPresented: $showCurrencySheet) {
-            AddCurrencyView(showSheet: $showCurrencySheet)
+        }
+        .sheet(isPresented: $showCurrencySheet) {
+            AddCurrencyView(showSheet: $showCurrencySheet, currencies: $balance.currenciesArray)
             
         }
         .sheet(isPresented: $showAddFundsSheet) {
@@ -167,6 +172,8 @@ struct ExchangeView_Previews: PreviewProvider {
 
 struct ListRow: View {
     
+    
+    //View to display row of list  with information about crypto
     @Binding var userAmount: Double
     @Binding var currency: String
     @Binding var exchangeRate: Double
@@ -187,8 +194,6 @@ struct ListRow: View {
        
     
     var body: some View {
-        
-        
             ZStack {
                 RoundedRectangle(cornerRadius: 15, style: .continuous)
                     .fill(Color("lightYellow"))
@@ -223,13 +228,6 @@ struct ListRow: View {
                         }
 
                         Text("Price: \((ticker.lastPrice.toDouble()! * exchangeRate.round(to: 2)).removeZerosFromEnd())")
-//                        HStack {
-//                            Text("Price: ")
-//                                .font(.callout)
-//                            Text("\((ticker.lastPrice.toDouble()! * exchangeRate.round(to: 2)).removeZerosFromEnd()) \(currency)")
-//                                .font(.callout)
-//                                .frame( alignment: .leading)
-//                        }
                         
 
                     }

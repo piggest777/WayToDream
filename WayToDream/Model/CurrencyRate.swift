@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// model currency rate object
 struct CurrencyRate: Codable {    
     var result: Double
 }

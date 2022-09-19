@@ -7,9 +7,11 @@
 
 import SwiftUI
 
+//View for adding additional currencies in wallet
 struct AddCurrencyView: View {
     
     @Binding var showSheet: Bool
+    @Binding var currencies: [Currency]
     @ObservedObject var vm = AddCurrencyViewModel()
     @StateObject var balance = Balance()
     
@@ -26,7 +28,7 @@ struct AddCurrencyView: View {
                     currenciesArray!.append(symbol.title)
                     UserDefaults.standard.removeObject(forKey: CURRENCIES)
                     UserDefaults.standard.set(currenciesArray, forKey: CURRENCIES)
-                    balance.currenciesArray.append(Currency(title: symbol.title))
+                   currencies.append(Currency(title: symbol.title))
                     showSheet = false
                 }
             }
@@ -52,8 +54,8 @@ struct AddCurrencyView: View {
     
 }
 
-struct AddCurrencyView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddCurrencyView(showSheet: .constant(true))
-    }
-}
+//struct AddCurrencyView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddCurrencyView(showSheet: .constant(true))
+//    }
+//}

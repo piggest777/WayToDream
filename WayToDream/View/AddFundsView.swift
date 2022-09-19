@@ -8,6 +8,9 @@
 import SwiftUI
 import Combine
 
+
+
+//View which imitate wallet top up
 struct AddFundsView: View {
     
     @Binding var showSheet: Bool
@@ -16,6 +19,7 @@ struct AddFundsView: View {
     @StateObject var balance = Balance()
     @State var inputBalance = ""
     @Binding var currency: String
+    @State var showAlert = false
     
     var body: some View {
         
@@ -35,19 +39,13 @@ struct AddFundsView: View {
                         .multilineTextAlignment(.trailing)
                         .padding(.trailing, 5)
                         .onReceive(Just(inputBalance)) { newValue in
-                            var filtered = newValue.filter {
+                            let filtered = newValue.filter {
                                 "0123456789.".contains($0)}
                             if filtered != newValue {
                                 
                                 if filtered != newValue {
                                     self.inputBalance = filtered
                                 }
-                                //                                if let balance: Double = Double(filtered) {
-                                //                                    self.inputBalance = String(balance)
-                                //                                } else {
-                                //                                    print("wrong number format")
-                                //                                }
-                                
                             }
                             
                         }
@@ -71,28 +69,32 @@ struct AddFundsView: View {
                         showSheet = false
                         
                     } else {
-                        print("wrong number format")
+                        
+                        showAlert = true
                     }
                 }
                 
                 
-            }
-            .navigationTitle("Add Funds")
-            .environmentObject(balance)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showSheet = false
-                    } label: {
-                        Image(systemName: "xmark.circle")
+            }.alert("wrong number format", isPresented: $showAlert) {
+                Button("OK", role: .cancel) {}
+                    .navigationTitle("Add Funds")
+                    .environmentObject(balance)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                showSheet = false
+                            } label: {
+                                Image(systemName: "xmark.circle")
+                            }
+                            
+                        }
+                        
+                        
                     }
-                    
-                }
-                
-                
             }
         }
     }
+    
 }
 
 //struct AddFundsView_Previews: PreviewProvider {

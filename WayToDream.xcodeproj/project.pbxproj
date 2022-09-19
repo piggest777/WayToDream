@@ -21,6 +21,10 @@
 		B5230EA628D3CECB003D8274 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5230EA528D3CECB003D8274 /* Constants.swift */; };
 		B5230EA928D3E4C6003D8274 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5230EA828D3E4C6003D8274 /* StringExt.swift */; };
 		B5230EAB28D3E6AD003D8274 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5230EAA28D3E6AD003D8274 /* DoubleExt.swift */; };
+		B530532F28D8EBBC00DD8F5A /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B530532E28D8EBBC00DD8F5A /* Lottie */; };
+		B530533228D8EF7300DD8F5A /* programmer.json in Resources */ = {isa = PBXBuildFile; fileRef = B530533128D8EF7300DD8F5A /* programmer.json */; };
+		B530533428D8EF8C00DD8F5A /* BuyCryptoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530533328D8EF8C00DD8F5A /* BuyCryptoView.swift */; };
+		B530533628D8EFF000DD8F5A /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B530533528D8EFF000DD8F5A /* LottieView.swift */; };
 		B552D25E28D5DAC000DC4196 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552D25D28D5DAC000DC4196 /* Currency.swift */; };
 		B552D26028D64DF500DC4196 /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552D25F28D64DF500DC4196 /* CurrencyRate.swift */; };
 		B552D26228D6598300DC4196 /* AddCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552D26128D6598300DC4196 /* AddCurrencyView.swift */; };
@@ -45,12 +49,16 @@
 		B5230EA528D3CECB003D8274 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B5230EA828D3E4C6003D8274 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		B5230EAA28D3E6AD003D8274 /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
+		B530533128D8EF7300DD8F5A /* programmer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = programmer.json; sourceTree = "<group>"; };
+		B530533328D8EF8C00DD8F5A /* BuyCryptoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyCryptoView.swift; sourceTree = "<group>"; };
+		B530533528D8EFF000DD8F5A /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		B552D25D28D5DAC000DC4196 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B552D25F28D64DF500DC4196 /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
 		B552D26128D6598300DC4196 /* AddCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyView.swift; sourceTree = "<group>"; };
 		B552D26328D65AA500DC4196 /* AddCurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyViewModel.swift; sourceTree = "<group>"; };
 		B552D26528D65BDB00DC4196 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		B552D26728D6792700DC4196 /* AddFundsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFundsView.swift; sourceTree = "<group>"; };
+		B556899928D8FB9C008488E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B5AC628528D59046006498D4 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5230E9828D3B669003D8274 /* Alamofire in Frameworks */,
+				B530532F28D8EBBC00DD8F5A /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +103,7 @@
 		B5230E8728D3B53F003D8274 /* WayToDream */ = {
 			isa = PBXGroup;
 			children = (
+				B556899928D8FB9C008488E2 /* Info.plist */,
 				B5AC628428D5902D006498D4 /* Service */,
 				B5230E9B28D3B760003D8274 /* Model */,
 				B5230E9A28D3B756003D8274 /* ViewModel */,
@@ -102,6 +112,7 @@
 				B5230EA428D3CEB4003D8274 /* Helpers */,
 				B5230EA728D3E4AC003D8274 /* Ext */,
 				B5230E8C28D3B542003D8274 /* Assets.xcassets */,
+				B530533028D8EF4F00DD8F5A /* Lottie */,
 				B5230E8E28D3B542003D8274 /* Preview Content */,
 			);
 			path = WayToDream;
@@ -123,6 +134,8 @@
 				B5230EA028D3CD3B003D8274 /* ExchangeView.swift */,
 				B552D26128D6598300DC4196 /* AddCurrencyView.swift */,
 				B552D26728D6792700DC4196 /* AddFundsView.swift */,
+				B530533328D8EF8C00DD8F5A /* BuyCryptoView.swift */,
+				B530533528D8EFF000DD8F5A /* LottieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,6 +178,14 @@
 			path = Ext;
 			sourceTree = "<group>";
 		};
+		B530533028D8EF4F00DD8F5A /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				B530533128D8EF7300DD8F5A /* programmer.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
 		B5AC628428D5902D006498D4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +212,7 @@
 			name = WayToDream;
 			packageProductDependencies = (
 				B5230E9728D3B669003D8274 /* Alamofire */,
+				B530532E28D8EBBC00DD8F5A /* Lottie */,
 			);
 			productName = WayToDream;
 			productReference = B5230E8528D3B53F003D8274 /* WayToDream.app */;
@@ -222,6 +244,7 @@
 			mainGroup = B5230E7C28D3B53F003D8274;
 			packageReferences = (
 				B5230E9628D3B669003D8274 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				B530532D28D8EBBC00DD8F5A /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = B5230E8628D3B53F003D8274 /* Products */;
 			projectDirPath = "";
@@ -238,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5230E9028D3B542003D8274 /* Preview Assets.xcassets in Resources */,
+				B530533228D8EF7300DD8F5A /* programmer.json in Resources */,
 				B5230E8D28D3B542003D8274 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,11 +274,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B552D25E28D5DAC000DC4196 /* Currency.swift in Sources */,
+				B530533428D8EF8C00DD8F5A /* BuyCryptoView.swift in Sources */,
 				B552D26228D6598300DC4196 /* AddCurrencyView.swift in Sources */,
 				B552D26428D65AA500DC4196 /* AddCurrencyViewModel.swift in Sources */,
 				B5230E8B28D3B53F003D8274 /* ContentView.swift in Sources */,
 				B5230E9D28D3C0A8003D8274 /* Ticker.swift in Sources */,
 				B5230E8928D3B53F003D8274 /* WayToDreamApp.swift in Sources */,
+				B530533628D8EFF000DD8F5A /* LottieView.swift in Sources */,
 				B552D26028D64DF500DC4196 /* CurrencyRate.swift in Sources */,
 				B5230EA928D3E4C6003D8274 /* StringExt.swift in Sources */,
 				B509332B28D410A200C84677 /* CustomButton.swift in Sources */,
@@ -398,11 +424,13 @@
 				DEVELOPMENT_TEAM = 83G4KB5W5L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WayToDream/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,11 +456,13 @@
 				DEVELOPMENT_TEAM = 83G4KB5W5L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WayToDream/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -479,6 +509,14 @@
 				kind = branch;
 			};
 		};
+		B530532D28D8EBBC00DD8F5A /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -486,6 +524,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B5230E9628D3B669003D8274 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		B530532E28D8EBBC00DD8F5A /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B530532D28D8EBBC00DD8F5A /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
