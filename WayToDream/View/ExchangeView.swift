@@ -130,12 +130,15 @@ struct ExchangeView: View {
                             .progressViewStyle(.circular)
                             .visibility(vm.visibilityProgressView)
                         
-                        ScrollView {
+                        List {
                                 ForEach(searchResults, id: \.baseAsset) { ticker in
                                 
                                     ListRow(userAmount: $textBalance, currency: $currency, exchangeRate: $vm.exchangeRate ,ticker: ticker)
+                                        .listRowInsets(EdgeInsets())
+                                        .listRowSeparator(.hidden)
                                 }
-                            }
+                        }.background(Color("Background"))
+                            .scrollContentBackground(.hidden)
                             .searchable(text: $searchText)
 
                     }.onAppear {
@@ -233,8 +236,7 @@ struct ListRow: View {
                     }
                 }
                 .padding()
-            }
-            .padding(.horizontal, 10)
+            }.padding(.vertical, 2)
         
     }
 }
