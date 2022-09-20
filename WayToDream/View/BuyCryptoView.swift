@@ -9,7 +9,8 @@ import SwiftUI
 
 struct BuyCryptoView: View {
     var body: some View {
-        LottieView(lottieFile: "contact-us")
+        
+        LottieView(lottieFile: "programmer")
             .frame(width: 300, height: 300)
     }
 }

@@ -131,12 +131,17 @@ struct ExchangeView: View {
                             .visibility(vm.visibilityProgressView)
                         
                         List {
-                                ForEach(searchResults, id: \.baseAsset) { ticker in
+                            
+                            ForEach(searchResults, id: \.baseAsset) { ticker in
                                 
-                                    ListRow(userAmount: $textBalance, currency: $currency, exchangeRate: $vm.exchangeRate ,ticker: ticker)
-                                        .listRowInsets(EdgeInsets())
-                                        .listRowSeparator(.hidden)
-                                }
+                                ListRow(userAmount: $textBalance, currency: $currency, exchangeRate: $vm.exchangeRate ,ticker: ticker)
+                                    .listRowInsets(EdgeInsets())
+                                    .listRowSeparator(.hidden)
+                                    .overlay(NavigationLink(destination: BuyCryptoView(), label: {
+                                                            EmptyView()
+                                                        }).opacity(0))
+
+                            }
                         }.background(Color("Background"))
                             .scrollContentBackground(.hidden)
                             .searchable(text: $searchText)
@@ -148,6 +153,7 @@ struct ExchangeView: View {
                         
                         vm.getRate(from: "USD", to: currency)
                 }
+                    .navigationTitle("My way to dream")
                 }
             }
         }
@@ -237,6 +243,7 @@ struct ListRow: View {
                 }
                 .padding()
             }.padding(.vertical, 2)
+            .background(Color("Background"))
         
     }
 }
